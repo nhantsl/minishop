@@ -25,4 +25,4 @@ RUN chmod -R 775 storage bootstrap/cache
 EXPOSE 10000
 
 # Start app
-CMD sh -c "php artisan migrate:fresh --seed && php artisan serve --host=0.0.0.0 --port=10000"
+# CMD sh -c "php artisan migrate:fresh --seed && php artisan serve --host=0.0.0.0 --port=10000"
