@@ -1,7 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout>
     <div class="grid lg:grid-cols-3 gap-2 mt-2">
         <div class="p-6 lg:col-span-2 bg-white shadow-lg rounded border">
 
@@ -175,5 +174,4 @@
         </script>
 
     @endif
-</x-app-layout>
 @endsection

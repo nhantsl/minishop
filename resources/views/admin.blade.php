@@ -1,7 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout class="">
     {{-- Orders --}}
     <div class="space-y-2">
         <h1 class="text-2xl font-bold mt-2">Orders</h1>
@@ -516,5 +515,4 @@
         </script>
 
     @endif
-</x-app-layout>
 @endsection

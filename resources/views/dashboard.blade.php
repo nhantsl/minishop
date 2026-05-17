@@ -1,7 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout>
 @if($orders->count() == 0)
 <div class="bg-white rounded shadow-sm border p-10 text-center">
 
@@ -163,6 +162,5 @@
 
     </div>
 @endif
-</x-app-layout>
 
 @endsection

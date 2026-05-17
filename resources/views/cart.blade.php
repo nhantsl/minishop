@@ -1,7 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout>
 
 @if($cartCount == 0)
 
@@ -236,5 +235,4 @@
         </script>
 
     @endif
-</x-app-layout>
 @endsection

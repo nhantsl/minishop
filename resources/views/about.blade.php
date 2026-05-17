@@ -1,7 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout>
 <!-- About Us Section -->
 <section class="bg-white mt-2 rounded p-2">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -96,5 +95,4 @@
         </div>
     </div>
 </section>
-</x-app-layout>
 @endsection

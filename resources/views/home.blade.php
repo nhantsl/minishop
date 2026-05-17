@@ -1,115 +1,111 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout>
-    <x-slot name="header">
-        <div class="flex flex-wrap items-center justify-between gap-4 px-4">
+    <div class="flex flex-wrap items-center justify-between gap-4 p-4 bg-white">
 
-            {{-- FILTERS --}}
-            <form
-                method="GET"
-                action="{{ route('home') }}"
-                class="flex flex-wrap items-center gap-3"
+        {{-- FILTERS --}}
+        <form
+            method="GET"
+            action="{{ route('home') }}"
+            class="flex flex-wrap items-center gap-3"
+        >
+
+            {{-- FILTER ICON --}}
+            <div class="flex items-center gap-2 text-gray-600">
+                {{-- Heroicon --}}
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2l-7 7v5l-4 2v-7L3 6V4z"/>
+                </svg>
+
+                <span class="text-sm font-medium">
+                    Filters
+                </span>
+            </div>
+
+            {{-- BRAND --}}
+            <select
+                name="brands[]"
+                class="px-6 py-2 border rounded-lg text-sm lg:hidden"
+                onchange="this.form.submit()"
             >
+                <option value="">Brands</option>
 
-                {{-- FILTER ICON --}}
-                <div class="flex items-center gap-2 text-gray-600">
-                    {{-- Heroicon --}}
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2l-7 7v5l-4 2v-7L3 6V4z"/>
-                    </svg>
+                @foreach ($brands as $brand)
+                    <option
+                        value="{{ $brand->id }}"
+                        @selected(in_array($brand->id, $q_brands))
+                    >
+                        {{ $brand->name }}
+                    </option>
+                @endforeach
+            </select>
 
-                    <span class="text-sm font-medium">
-                        Filters
-                    </span>
-                </div>
-
-                {{-- BRAND --}}
-                <select
-                    name="brands[]"
-                    class="px-6 py-2 border rounded-lg text-sm lg:hidden"
-                    onchange="this.form.submit()"
-                >
-                    <option value="">Brands</option>
-
-                    @foreach ($brands as $brand)
-                        <option
-                            value="{{ $brand->id }}"
-                            @selected(in_array($brand->id, $q_brands))
-                        >
-                            {{ $brand->name }}
-                        </option>
-                    @endforeach
-                </select>
-
-                {{-- CATEGORY --}}
-                <select
-                    name="categories[]"
-                    class="px-4 py-2 border rounded-lg text-sm lg:hidden"
-                    onchange="this.form.submit()"
-                >
-                    <option value="">Category</option>
-
-                    @foreach ($categories as $category)
-                        <option
-                            value="{{ $category->id }}"
-                            @selected(in_array($category->id, $q_categories))
-                        >
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
-                </select>
-
-            </form>
-
-            {{-- SORT --}}
-            <form
-                method="GET"
-                action="{{ route('home') }}"
+            {{-- CATEGORY --}}
+            <select
+                name="categories[]"
+                class="px-4 py-2 border rounded-lg text-sm lg:hidden"
+                onchange="this.form.submit()"
             >
-                {{-- giữ filter khi sort --}}
-                @foreach(request('brands', []) as $brand)
-                    <input type="hidden" name="brands[]" value="{{ $brand }}">
+                <option value="">Category</option>
+
+                @foreach ($categories as $category)
+                    <option
+                        value="{{ $category->id }}"
+                        @selected(in_array($category->id, $q_categories))
+                    >
+                        {{ $category->name }}
+                    </option>
                 @endforeach
+            </select>
 
-                @foreach(request('categories', []) as $category)
-                    <input type="hidden" name="categories[]" value="{{ $category }}">
-                @endforeach
+        </form>
 
-                <select
-                    name="sort"
-                    class="px-4 py-2 border rounded-lg text-sm"
-                    onchange="this.form.submit()"
-                >
-                    <option value="">Sort By</option>
+        {{-- SORT --}}
+        <form
+            method="GET"
+            action="{{ route('home') }}"
+        >
+            {{-- giữ filter khi sort --}}
+            @foreach(request('brands', []) as $brand)
+                <input type="hidden" name="brands[]" value="{{ $brand }}">
+            @endforeach
 
-                    <option value="price_asc"
-                        @selected(request('sort') == 'price_asc')>
-                        Price ASC
-                    </option>
+            @foreach(request('categories', []) as $category)
+                <input type="hidden" name="categories[]" value="{{ $category }}">
+            @endforeach
 
-                    <option value="price_desc"
-                        @selected(request('sort') == 'price_desc')>
-                        Price DESC
-                    </option>
+            <select
+                name="sort"
+                class="px-4 py-2 border rounded-lg text-sm"
+                onchange="this.form.submit()"
+            >
+                <option value="">Sort By</option>
 
-                    <option value="newest"
-                        @selected(request('sort') == 'newest')>
-                        Newest
-                    </option>
-                </select>
-            </form>
+                <option value="price_asc"
+                    @selected(request('sort') == 'price_asc')>
+                    Price ASC
+                </option>
 
-        </div>
-    </x-slot>
+                <option value="price_desc"
+                    @selected(request('sort') == 'price_desc')>
+                    Price DESC
+                </option>
 
+                <option value="newest"
+                    @selected(request('sort') == 'newest')>
+                    Newest
+                </option>
+            </select>
+        </form>
+
+    </div>
 
     <div class="flex">
         <!-- Sidebar -->
@@ -378,7 +374,5 @@
         </script>
 
     @endif
-</x-app-layout>
-
 
 @endsection

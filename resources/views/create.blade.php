@@ -1,7 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
-<x-app-layout>
     <h2 class="text-2xl font-bold text-gray-800 my-2">Create Product</h2>
 
     <div class="bg-white shadow rounded p-2">
@@ -184,5 +183,4 @@
 
         </form>
     </div>
-</x-app-layout>
 @endsection
