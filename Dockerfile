@@ -34,8 +34,10 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Permission
-RUN chown -R www-data:www-data storage bootstrap/cache database
-
+RUN mkdir -p storage/logs \
+    && touch storage/logs/laravel.log \
+    && chown -R www-data:www-data storage bootstrap/cache database \
+    && chmod -R 775 storage bootstrap/cache database
 # Startup script
 COPY render-start.sh /usr/local/bin/render-start.sh
 RUN chmod +x /usr/local/bin/render-start.sh
