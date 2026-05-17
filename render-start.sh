@@ -12,13 +12,15 @@ chown -R www-data:www-data storage bootstrap/cache database
 
 # Clear caches
 php artisan config:clear
-php artisan cache:clear
 
 # Run migrations
 php artisan migrate --force
 
 # Optional seed
 php artisan db:seed --force || true
+
+# NOW clear cache safely
+php artisan cache:clear || true
 
 # Cache configs
 php artisan config:cache
