@@ -12,9 +12,6 @@ touch /var/www/html/database/database.sqlite
 chown -R www-data:www-data storage bootstrap/cache database
 chmod -R 775 storage bootstrap/cache database
 
-# Clear caches
-php artisan optimize:clear
-
 # Generate key if missing
 php artisan key:generate --force
 
