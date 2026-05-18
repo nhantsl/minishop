@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -28,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('cartCount', $cartCount);
 
         });
+
+            if (app()->environment('production')) {
+                URL::forceScheme('https');
+            }
     }
 }
