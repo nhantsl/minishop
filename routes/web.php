@@ -31,7 +31,7 @@ Route::middleware(['customer'])->group(function () {
 
     Route::middleware(['auth']) ->group(function () {
         Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-        Route::post('/checkout', [CheckoutController::class, 'store']);
+        Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
         Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
     });
 });

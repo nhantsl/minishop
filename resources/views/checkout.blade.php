@@ -8,7 +8,7 @@
                 Checkout Information
             </h2>
 
-            <form method="POST" action="/checkout" class="space-y-4">
+            <form method="POST" action="{{ route('checkout.store')}}" class="space-y-4">
                 @csrf
 
                 <div>

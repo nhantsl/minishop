@@ -210,7 +210,7 @@
 
                         {{-- desktop email --}}
                         <td class="hidden px-3 py-3 text-gray-600 md:table-cell md:px-6">
-                            <div class="max-w-[240px] truncate"
+                            <div class="truncate"
                                 title="{{ $user->email }}">
                                 {{ $user->email }}
                             </div>
