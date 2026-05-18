@@ -12,9 +12,6 @@ touch /var/www/html/database/database.sqlite
 chown -R www-data:www-data storage bootstrap/cache database
 chmod -R 775 storage bootstrap/cache database
 
-# Generate key if missing
-php artisan key:generate --force
-
 # Migrate + seed
 php artisan migrate --force
 php artisan db:seed --force
