@@ -20,7 +20,6 @@
                     class="
                         flex h-9 w-9 items-center justify-center
                         rounded-full
-                        border
                         bg-white
                         text-sm
                         shadow-sm
@@ -35,7 +34,6 @@
                     class="
                         flex h-9 w-9 items-center justify-center
                         rounded-full
-                        border
                         bg-white
                         text-sm
                         shadow-sm
@@ -50,7 +48,6 @@
                     class="
                         flex h-9 w-9 items-center justify-center
                         rounded-full
-                        border
                         bg-white
                         text-sm
                         shadow-sm
@@ -126,13 +123,13 @@
                 Nhận tin mới
             </h3>
 
-            <form class=" flex flex-col sm:flex-row gap-2">
+            <form class="flex flex-col gap-2">
                 <input type="email" placeholder="Nhập email..."
                     class=" flex-1 rounded-xl border border-gray-300 px-4
-                        py-2.5 text-sm focus:border-orange-500 focus:ring-orange-500
+                        py-2.5 text-sm focus:border-orange-500 focus:outline-orange-500
                     ">
                 <button
-                    class=" rounded-xl bg-orange-500 px-5 py-2.5 text-sm
+                    class="rounded-xl bg-orange-500 px-5 py-2.5 text-sm
                     font-semibold text-white transition hover:bg-orange-600
                     ">
                     Đăng ký

@@ -7,10 +7,10 @@
 
         @foreach($orders as $order)
             <div x-data="{ open: false }"
-                class="bg-white shadow rounded-xl border border-gray-100">
+                class="bg-white shadow rounded">
                 {{-- HEADER --}}
                 <div class="p-3 flex flex-wrap justify-between items-center gap-4">
-
+                    {{-- ORDER --}}
                     <div class="font-semibold">
                         Order #{{ $order->id }}
                         <div class="text-sm text-gray-500">
@@ -18,11 +18,11 @@
                             📍 {{ $order->address }}
                         </div>
                     </div>
-
-                    <div class="text-gray-600">
+                    {{-- NAME --}}
+                    <div class="text-gray-600 font-semibold">
                         {{ $order->user->name }}
                     </div>
-
+                    {{-- TOTAL --}}
                     <div class="font-medium">
                         Total:
                         <span class="text-orange-500 font-semibold">
@@ -132,11 +132,11 @@
                 <div x-show="open" x-transition class="bg-gray-100 p-2 space-y-1">
 
                     @foreach($order->items as $item)
-                        <div class="flex items-center justify-between bg-white p-3 rounded shadow-sm">
+                        <div class="flex items-center justify-between bg-white p-3 rounded shadow">
 
                             <div class="flex items-center gap-3">
                                 <img src="{{ asset('images/' . $item->product->image) }}"
-                                    class="w-14 h-14 object-contain rounded border">
+                                    class="w-14 h-14 object-contain rounded border border-gray-100">
 
                                 <div>
                                     <div class="font-medium">
@@ -203,16 +203,17 @@
 
                             {{-- email hiện dưới name trên mobile --}}
                             <div class="mt-1 text-xs text-gray-500 break-all md:hidden">
-                                {{ $user->email }}
+                                {{-- {{ $user->email }} --}}
+                                {{ $user->email ?? fake()->email() }}
                             </div>
 
                         </td>
 
                         {{-- desktop email --}}
                         <td class="hidden px-3 py-3 text-gray-600 md:table-cell md:px-6">
-                            <div class="truncate"
-                                title="{{ $user->email }}">
-                                {{ $user->email }}
+                            <div class="truncate">
+                                {{-- {{ $user->email }} --}}
+                                {{ $user->email ?? fake()->email() }}
                             </div>
                         </td>
 
@@ -249,7 +250,7 @@
     </div>
     {{-- Products --}}
     <h1 class="text-2xl font-bold mt-2">Products</h1>
-
+    {{-- CREATE --}}
     <a href="{{ route('admin.products.create') }}"
         class="inline-flex m-1
         bg-orange-500 hover:bg-orange-600
@@ -257,11 +258,11 @@
             + Create Product
     </a>
 
-    <div class="bg-white shadow-md rounded-xl border overflow-hidden">
+    <div class="bg-white shadow rounded overflow-hidden">
 
         <table class="w-full text-left">
 
-            <thead class="bg-gray-100 text-gray-700 text-sm">
+            <thead class="bg-gray-50 text-gray-600 text-sm">
                 <tr>
                     <th class="p-3">ID</th>
                     <th class="p-3">Product</th>
@@ -271,10 +272,10 @@
                 </tr>
             </thead>
 
-            <tbody class="divide-y">
+            <tbody class="">
 
                 @foreach($products as $product)
-                    <tr class="hover:bg-gray-50 transition">
+                    <tr class="hover:bg-gray-50 transition border border-gray-100">
 
                         <td class="p-3 text-gray-500">
                             #{{ $product->id }}
@@ -314,9 +315,8 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <button
-                                    class="rounded-lg bg-red-50 px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-100"
-                                >
+                                <button class="rounded-lg bg-red-50 px-3 py-1.5 text-xs font-medium
+                                 text-red-600 transition hover:bg-red-100">
                                     Delete
                                 </button>
 

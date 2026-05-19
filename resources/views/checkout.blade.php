@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="grid lg:grid-cols-3 gap-2 mt-2">
-        <div class="p-6 lg:col-span-2 bg-white shadow-lg rounded border">
+        <div class="p-6 lg:col-span-2 bg-white shadow rounded">
 
             <h2 class="text-xl font-bold text-gray-800 mb-4">
                 Checkout Information
@@ -16,7 +16,7 @@
                         Phone
                     </label>
                     <input
-                        class="w-full border-gray-300 p-3 rounded focus:ring-orange-400"
+                        class="w-full border border-gray-100 p-3 rounded focus:outline-orange-400"
                         name="phone"
                         placeholder="Enter your phone"
                     >
@@ -27,7 +27,7 @@
                         Address
                     </label>
                     <input
-                        class="w-full border-gray-300 p-3 rounded focus:ring-orange-400"
+                        class="w-full border border-gray-100 p-3 rounded focus:outline-orange-400"
                         name="address"
                         placeholder="Enter your address"
                     >

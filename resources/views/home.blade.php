@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-wrap items-center justify-between gap-4 p-4 bg-white">
+    <div class="flex flex-wrap items-center justify-between gap-4 p-4 bg-white rounded">
 
         {{-- FILTERS --}}
         <form
@@ -32,7 +32,7 @@
             {{-- BRAND --}}
             <select
                 name="brands[]"
-                class="px-6 py-2 border rounded-lg text-sm lg:hidden"
+                class="px-6 py-2 rounded-lg text-sm lg:hidden shadow-sm"
                 onchange="this.form.submit()"
             >
                 <option value="">Brands</option>
@@ -50,7 +50,7 @@
             {{-- CATEGORY --}}
             <select
                 name="categories[]"
-                class="px-4 py-2 border rounded-lg text-sm lg:hidden"
+                class="px-6 py-2 shadow-sm rounded-lg text-sm lg:hidden"
                 onchange="this.form.submit()"
             >
                 <option value="">Category</option>
@@ -83,7 +83,7 @@
 
             <select
                 name="sort"
-                class="px-4 py-2 border rounded-lg text-sm"
+                class="px-6 py-2 shadow-sm rounded-lg text-sm"
                 onchange="this.form.submit()"
             >
                 <option value="">Sort By</option>
@@ -111,14 +111,14 @@
         <!-- Sidebar -->
         <aside class="w-1/4 p-4 bg-white hidden lg:block">
 
-            <div class="bg-white p-4 rounded-xl shadow">
+            <div class="bg-white p-4 rounded-xl shadow-sm">
 
                 {{-- BRAND --}}
                 <h3 class="font-semibold mb-3">Brand</h3>
                 <form action="{{ route('home') }}">
                     <div class="space-y-2 mb-6">
                         @foreach ($brands as $brand)
-                            <label class="flex items-center justify-between text-sm">
+                            <label class="flex items-center justify-between text-sm border-b border-gray-100">
                                 <div>
                                     <input type="checkbox"
                                         name="brands[]"
@@ -141,7 +141,7 @@
                 <form action="{{ route('home') }}">
                     <div class="space-y-2 mb-6">
                         @foreach ($categories as $category)
-                            <label class="flex items-center justify-between text-sm">
+                            <label class="flex items-center justify-between text-sm border-b border-gray-100">
                                 <div>
                                     <input type="checkbox"
                                         name="categories[]"
@@ -168,13 +168,13 @@
                             name="min"
                             value="{{ request('min') }}"
                             placeholder="Min"
-                            class="w-1/2 rounded"
+                            class="w-1/2 rounded-lg py-1 border border-gray-100"
                             >
                         <input type="number" id="max"
                             name="max"
                             value="{{ request('max') }}"
                             placeholder="Max"
-                            class="w-1/2 rounded"
+                            class="w-1/2 rounded-lg py-1 border border-gray-100"
                             >
                         </div>
                         <button class="bg-orange-500 text-white px-3 py-1 rounded w-full mt-2">
@@ -186,10 +186,8 @@
         </aside>
 
         <!-- Content -->
-        <div class="flex-1 min-w-0">
-
+        <div class="flex-1">
             <div class="max-w-7xl mx-auto px-4 py-6">
-
                 {{-- PRODUCTS --}}
                 <div class="lg:col-span-3">
                     {{-- PRODUCT GRID --}}
@@ -200,7 +198,7 @@
 
                                 <a>
                                     <img src="{{ asset('images/'.$product->image) }}"
-                                        class="w-full h-48 object-contain rounded mb-3">
+                                        class="w-full h-28 md:h-40 object-contain rounded mb-3">
                                 </a>
 
                                 <h5 class="font-semibold text-sm mb-1">
@@ -217,7 +215,7 @@
 
                                 {{-- ACTION --}}
                                 <div class="flex gap-2 w-full">
-                                    <a  class="flex-1 bg-orange-500 text-white text-sm py-1 rounded hover:bg-orange-600 text-center"
+                                    <a  class="flex-5 bg-orange-500 text-white text-sm p-1 rounded hover:bg-orange-600 text-center"
                                      href="{{ route('details', $product->slug) }}" >
                                         <button>
                                             Buy now
@@ -225,7 +223,7 @@
                                     </a>
                                     <button
                                         onclick="document.getElementById('addtocart-{{ $product->id }}').submit()"
-                                        class="flex-2 bg-orange-500 text-white text-sm p-1 rounded hover:bg-orange-600">
+                                        class="bg-orange-500 text-white text-sm p-1 rounded hover:bg-orange-600">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"

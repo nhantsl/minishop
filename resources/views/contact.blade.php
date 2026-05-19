@@ -25,7 +25,7 @@
                             <label class="block text-gray-700 mb-1">First Name</label>
                             <input type="text"
                                 placeholder="Enter Your First Name"
-                                class="w-full border-gray-300 rounded p-2 focus:ring-orange-500">
+                                class="w-full border border-gray-300 rounded p-2 focus:outline-orange-500">
                         </div>
 
                         <!-- Last Name -->
@@ -33,7 +33,7 @@
                             <label class="block text-gray-700 mb-1">Last Name</label>
                             <input type="text"
                                 placeholder="Enter Your Last Name"
-                                class="w-full border-gray-300 rounded p-2 focus:ring-orange-500">
+                                class="w-full border border-gray-300 rounded p-2 focus:outline-orange-500">
                         </div>
 
                         <!-- Email -->
@@ -41,7 +41,7 @@
                             <label class="block text-gray-700 mb-1">Email</label>
                             <input type="email"
                                 placeholder="Enter Your Email Address"
-                                class="w-full border-gray-300 rounded p-2 focus:ring-orange-500">
+                                class="w-full border border-gray-300 rounded p-2 focus:outline-orange-500">
                         </div>
 
                         <!-- Phone -->
@@ -49,20 +49,20 @@
                             <label class="block text-gray-700 mb-1">Phone</label>
                             <input type="text"
                                 placeholder="Enter Your Phone Number"
-                                class="w-full border-gray-300 rounded p-2 focus:ring-orange-500">
+                                class="w-full border border-gray-300 rounded p-2 focus:outline-orange-500">
                         </div>
 
                         <!-- Comment -->
                         <div class="md:col-span-2">
                             <label class="block text-gray-700 mb-1">Comment</label>
                             <textarea rows="5"
-                                class="w-full border-gray-300 rounded p-2 focus:ring-orange-500"></textarea>
+                                class="w-full border border-gray-300 rounded p-2 focus:outline-orange-500"></textarea>
                         </div>
 
                         <!-- Button -->
                         <div class="md:col-span-2">
                             <button type="submit"
-                                class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                                class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
                                 Submit
                             </button>
                         </div>

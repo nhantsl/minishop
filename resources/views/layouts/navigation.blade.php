@@ -240,19 +240,9 @@
 </nav>
 
 
-<section class="relative overflow-hidden py-6 bg-gradient-to-r from-slate-50 to-slate-100">
-    <!-- Background circles -->
-    <ul class="bg-white/20 backdrop-blur-md border-white/30 px-4 py-2 rounded-xl z-0">
-        <li class="absolute size-14 bg-orange-50 rounded-full left-[10%] bottom-[-60px] animate-bounce"></li>
-        <li class="absolute size-20 bg-red-50 left-[20%] bottom-[-50px] animate-spin rotate-12"></li>
-        <li class="absolute size-14 bg-amber-100  left-[40%] bottom-[-50px] animate-pulse skew-x-12"></li>
-        <li class="absolute size-10 bg-yellow-100 rounded-full left-[70%] bottom-[-50px] animate-ping"></li>
-        <li class="absolute size-20 bg-amber-100  left-[85%] bottom-[-50px] animate-pulse skew-y-12"></li>
-    </ul>
+<section class="relative overflow-hidden py-10 bg-linear-90 from-cyan-200 via-sky-100 to-blue-200">
 
-    <div class="relative z-1 text-center">
-        <h3 class="text-2xl font-semibold text-gray-800">
-            {{ str(Route::currentRouteName())->before('.')->title() }}
-        </h3>
-    </div>
+    <h3 class="text-4xl font-extrabold tracking-wide text-orange-400 text-center">
+        {{ str(Route::currentRouteName())->before('.')->title() }}
+    </h3>
 </section>

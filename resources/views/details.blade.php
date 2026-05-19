@@ -4,21 +4,18 @@
     <main class="max-w-7xl mx-auto px-4 py-10">
 
         {{-- Product Details --}}
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
 
             {{-- Product Images --}}
-            <div>
-                {{-- Main Image --}}
-                <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-sm">
-                    <img src="{{ asset('images/'.$product->image) }}"
-                        id="mainImage"
-                        class="w-full h-[500px] object-contain"
-                        alt="Product Image">
-                </div>
+            <div class="bg-white rounded-3xl mx-auto px-30 w-full">
+                <img src="{{ asset('images/'.$product->image) }}"
+                    id="mainImage"
+                    class="object-contain "
+                    alt="Product Image">
             </div>
 
             {{-- Product Info --}}
-            <div class="flex flex-col justify-center">
+            <div class="col-span-2 flex flex-col justify-center bg-white rounded-3xl p-3">
 
                 {{-- Category --}}
                 <span class="text-sm uppercase tracking-widest text-gray-500 mb-3">
@@ -69,12 +66,13 @@
                                 name="quantity"
                                 value="1"
                                 min="1"
-                                class="w-20 text-center font-semibold rounded">
+                                class="w-20 text-center font-semibold rounded border border-gray-200">
                         </div>
 
                         <button type="submit"
                             id="addCartBtn"
-                            class="inline-flex items-center justify-center gap-3 bg-black text-white hover:bg-gray-800 px-8 py-4 rounded-2xl font-semibold transition duration-300">
+                            class="inline-flex items-center justify-center gap-3 bg-orange-500 text-white
+                             hover:bg-orange-600 px-8 py-4 rounded-2xl font-semibold transition duration-300">
 
                             <i class="fa fa-shopping-cart"></i>
 
@@ -143,7 +141,8 @@
                     @foreach($randomProducts as $product)
 
                         <div
-                            class="w-[280px] flex-shrink-0 bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition duration-300 group">
+                            class="w-70 shrink-0 bg-white rounded-3xl overflow-hidden
+                            shadow-sm hover:shadow-2xl hover:-translate-y-1 transition duration-300 group">
 
                             {{-- Image --}}
                             <div class="relative overflow-hidden">
@@ -158,7 +157,6 @@
 
                             {{-- Info --}}
                             <div class="p-5">
-
                                 <a href="{{ route('details', $product->slug) }}">
                                     <h5
                                         class="text-lg font-semibold text-gray-900 hover:text-black transition mb-3 line-clamp-2">
@@ -175,7 +173,7 @@
                                         {{ number_format($product->regular_price) }} VNĐ
                                     </span>
 
-                                    <button class=" hover:bg-gray-200 px-4 py-2 rounded-xl transition">
+                                    <button class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-xl transition text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"

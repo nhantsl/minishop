@@ -37,16 +37,8 @@
     <div class="mt-2 space-y-1">
 
         @foreach($orders as $order)
-            <div
-                x-data="{ open: false }"
-                class="p-2 bg-white shadow rounded"
-            >
-                <div class="
-                    flex
-                    flex-row items-center
-                    justify-between gap-4 p-2
-                ">
-
+            <div x-data="{ open: false }" class="p-2 bg-white shadow rounded">
+                <div class=" flex flex-row items-center justify-between gap-4 p-2">
                     <div>
                         <h3 class="text-lg font-semibold">
                             Order #{{ $order->id }}
@@ -125,16 +117,11 @@
                 <!-- Items (hidden by default) -->
                 <div x-show="open" x-transition class="mt-3">
                     @foreach($order->items as $item)
-                        <div class="
-                            flex
-                            items-center
-                            gap-4
-                            py-4
-                            border-t
+                        <div class=" flex items-center gap-4 py-4 border-t border-gray-100
                         ">
                             <div>
                                 <img src="{{ asset('images/' . $item->product->image) }}"
-                                class="w-20 h-20 object-contain rounded mb-3 border">
+                                class="w-20 h-20 object-contain rounded mb-3 border border-gray-100">
                             </div>
                             <div class="flex-1">
 

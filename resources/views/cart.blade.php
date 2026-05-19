@@ -40,9 +40,9 @@
 @else
 
 <div class="overflow-x-auto rounded-2xl shadow">
-    <table class="table-fixed w-full bg-white shadow rounded-lg mt-2 ">
+    <table class="table-fixed w-full bg-white shadow rounded-lg">
 
-        <thead class="bg-gray-100 text-gray-700 text-xs lg:text-base uppercase">
+        <thead class="bg-gray-100 text-gray-700 text-xs lg:text-base uppercase h-6">
             <tr>
                 <th class="hidden lg:block"></th>
                 <th class="">Product</th>
@@ -65,26 +65,26 @@
                     $product = $products[$id];
                 @endphp
 
-            <tr class="hover:bg-gray-50 text-sm">
+            <tr class="hover:bg-gray-50 text-sm border-gray-100">
 
                 {{-- IMAGE --}}
                 <td class="text-center">
-                    <p class="lg:hidden pt-1">{{ $item['name'] }}</p>
+                    <p class="lg:hidden font-medium text-gray-600 mt-1">{{ $item['name'] }}</p>
                     <a href="{{ route('details', \App\Models\Product::find($id)->slug) }}">
 
                         <img src="{{ asset('images/' . $item['image']) }}"
-                            class="w-20 h-20 object-contain rounded mb-3 mx-auto">
+                            class="w-20 h-20 object-contain rounded my-3 p-1 mx-auto">
 
                     </a>
                 </td>
 
                 {{-- NAME --}}
-                <td class="text-center hidden lg:inline">
+                <td class="text-center font-medium text-gray-600 hidden lg:block py-9 ">
                     <p>{{ $item['name'] }}</p>
                 </td>
 
                 {{-- PRICE --}}
-                <td class="text-center">
+                <td class="text-center text-gray-600">
                     <strong>{{ number_format($item['price']) }}</strong>
                 </td>
 
@@ -99,7 +99,7 @@
                             value="{{ $item['quantity'] }}"
                             min="1"
                             onchange="this.form.submit()"
-                            class="w-12 lg:w-16 border rounded"
+                            class="w-12 lg:w-16 border border-gray-100 rounded text-center"
                         >
                     </form>
 
@@ -133,7 +133,7 @@
 
 <div dir="rtl" class="mt-2">
     <div class="text-xl font-bold text-orange-500">
-        Total: {{ $grandTotal }} VNĐ
+        Total: {{ number_format($grandTotal) }} VNĐ
     </div>
     <div class="text-red-500 px-4 py-2 rounded font-bold">
         <form action="{{ route('cart.clear') }}" method="POST">
