@@ -7,12 +7,12 @@
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
 
             {{-- Product Images --}}
-            <div class="bg-white rounded-3xl mx-auto w-full h-112 px-6 flex items-center justify-center overflow-hidden">
+            <div class="bg-white rounded-3xl mx-auto w-full h-75 lg:h-112 px-6 flex items-center justify-center overflow-hidden">
                 <img
                     src="{{ asset('images/' . $product->image) }}"
                     id="mainImage"
                     alt="{{ $product->name }}"
-                    class="max-h-full object-contain"
+                    class="h-50 lg:h-75 object-contain"
                     loading="lazy"
                 >
             </div>

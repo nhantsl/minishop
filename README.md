@@ -16,7 +16,7 @@ A simple e-commerce web application.
 - Register / Login
 - Browse products
 - Search products
-- Add to cart
+- Cart
 - Checkout
 - View order history
 
@@ -37,58 +37,7 @@ A simple e-commerce web application.
 - Tailwind CSS
 - Vite
 - Render (Deployment)
-
----
-
-# 🧱 Project Architecture
-
-The project follows Laravel MVC architecture with Service Layer pattern.
-
-## Main Components
-
-- Controllers
-- Models
-- Services
-- Middleware
-- Blade Views
-
-## Service Layer
-
-Business logic is separated into services:
-
-- `CartService`
-- `OrderService`
-
-This keeps controllers clean and improves maintainability.
-
----
-
-# 🗄️ Database Design
-
-## Main Tables
-
-- users
-- categories
-- products
-- orders
-- order_items
-
----
-
-# 🔐 Authentication & Authorization
-
-- Laravel Breeze Authentication
-- Admin Middleware Protection
-
----
-
-# 🛒 Shopping Flow
-
-1. User browses products
-2. Add products to cart
-3. Checkout
-4. Create order
-5. Admin manages order status
+- Brezze
 
 ---
 
@@ -123,11 +72,3 @@ This keeps controllers clean and improves maintainability.
 <img width="100%" src="./screenshots/dashboard.png" alt="dashboard">
 
 ---
-
-# ⚙️ Installation
-
-## Clone repository
-
-```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
