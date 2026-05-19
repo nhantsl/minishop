@@ -204,7 +204,7 @@
                             {{-- email hiện dưới name trên mobile --}}
                             <div class="mt-1 text-xs text-gray-500 break-all md:hidden">
                                 {{-- {{ $user->email }} --}}
-                                {{ $user->email ?? fake()->email() }}
+                                {{-- {{ $user->email ?? fake()->email() }} --}}
                             </div>
 
                         </td>
@@ -213,7 +213,7 @@
                         <td class="hidden px-3 py-3 text-gray-600 md:table-cell md:px-6">
                             <div class="truncate">
                                 {{-- {{ $user->email }} --}}
-                                {{ $user->email ?? fake()->email() }}
+                                {{-- {{ $user->email ?? fake()->email() }} --}}
                             </div>
                         </td>
 
