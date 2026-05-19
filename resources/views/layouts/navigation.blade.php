@@ -76,7 +76,7 @@
                         p-3 lg:p-0
                     ">
                     <form action="{{ route('home') }}" method="GET">
-                        <div class="flex items-center border border-gray-100 rounded-md px-2 py-1">
+                        <div class="flex items-center border border-gray-100 rounded px-2 py-1">
 
                             <i data-feather="search" class="w-4 h-4 text-gray-400"></i>
 
@@ -84,7 +84,7 @@
                                 type="text"
                                 name="keyword"
                                 placeholder="Tìm sản phẩm..."
-                                class="w-full border-none focus:ring-0 text-sm ml-2"
+                                class="w-full text-sm ml-2 focus:outline-none"
                                 autofocus
                             >
 
