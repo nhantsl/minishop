@@ -1,23 +1,26 @@
-# Laravel E-Commerce
+# 🛒 Laravel E-Commerce
 
-A simple e-commerce web application built with Laravel for portfolio purposes.
+A simple e-commerce web application.
 
-## 🚀 Live Demo
+---
 
-👉 https://your-app.onrender.com
+# 🚀 Live Demo
+
+👉 [View Demo](https://minishop-n4nj.onrender.com/)
 
 ---
 
 # 📌 Features
 
-## User
+## User Features
 - Register / Login
 - Browse products
+- Search products
 - Add to cart
 - Checkout
 - View order history
 
-## Admin
+## Admin Features
 - Product management
 - Order management
 - Update order status
@@ -27,16 +30,17 @@ A simple e-commerce web application built with Laravel for portfolio purposes.
 
 # 🛠️ Tech Stack
 
-- PHP 8+
-- Laravel 11
+- PHP 8.3
+- Laravel 13
 - SQLite
-- Tailwind CSS
 - Blade
+- Tailwind CSS
+- Vite
 - Render (Deployment)
 
 ---
 
-# 🧱 Architecture
+# 🧱 Project Architecture
 
 The project follows Laravel MVC architecture with Service Layer pattern.
 
@@ -51,10 +55,11 @@ The project follows Laravel MVC architecture with Service Layer pattern.
 ## Service Layer
 
 Business logic is separated into services:
-- CartService
-- OrderService
 
-This helps keep controllers clean and maintainable.
+- `CartService`
+- `OrderService`
+
+This keeps controllers clean and improves maintainability.
 
 ---
 
@@ -91,25 +96,31 @@ This helps keep controllers clean and maintainable.
 
 ## Homepage
 
-<img width="100%" alt="homepage" src="./screenshots/home.png">
+<img width="100%" src="./screenshots/home.png" alt="homepage">
+
+---
+
+## Product Detail
+
+<img width="100%" src="./screenshots/product.png" alt="product">
 
 ---
 
 ## Cart
 
-<img width="100%" alt="cart" src="./screenshots/cart.png">
+<img width="100%" src="./screenshots/cart.png" alt="cart">
 
 ---
 
 ## Checkout
 
-<img width="100%" alt="checkout" src="./screenshots/checkout.png">
+<img width="100%" src="./screenshots/checkout.png" alt="checkout">
 
 ---
 
 ## Admin Dashboard
 
-<img width="100%" alt="dashboard" src="./screenshots/dashboard.png">
+<img width="100%" src="./screenshots/dashboard.png" alt="dashboard">
 
 ---
 
