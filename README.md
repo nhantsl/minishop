@@ -10,6 +10,26 @@ A simple e-commerce web application.
 
 ---
 
+# 👨‍💼 Demo Accounts
+
+## Admin Account
+
+| Name | Password |
+|---|---|
+| Admin | password |
+
+## Customer Account
+
+| Name | Password |
+|---|---|
+| Test User | password |
+
+### Customer Features
+- Browse products
+- Add to cart
+- Checkout
+- View order history
+
 # 📌 Features
 
 ## User Features
