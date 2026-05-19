@@ -21,7 +21,7 @@
                 <img
                     src="../images/about.jpg"
                     alt="About Us"
-                    class="rounded-2xl shadow-lg w-full object-cover h-[450px]"
+                    class="rounded-2xl shadow-lg w-full object-cover h-112"
                 >
             </div>
 
